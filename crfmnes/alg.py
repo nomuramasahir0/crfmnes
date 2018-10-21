@@ -137,7 +137,8 @@ class CRFMNES:
             self.f_best = f_best
             self.x_best = x_best
 
-        lambF = np.sum(evals_no_sort > np.finfo(float).max)
+        # This operation assumes that if the solution is infeasible, infinity comes in as input.
+        lambF = np.sum(evals_no_sort < np.finfo(float).max)
 
         # evolution path p_sigma
         self.ps = (1 - self.cs) * self.ps + np.sqrt(self.cs * (2. - self.cs) * self.mueff) * (self.z @ self.w_rank)
