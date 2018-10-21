@@ -2,13 +2,13 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:3.5.1
+      - image: circleci/python:3.5.4 # https://github.com/CircleCI-Public/circleci-dockerfiles/tree/master/python/images/3.5.4
     steps:
       - checkout
       - run: pip install -r requirements.txt
   test:
     docker:
-      - image: circleci/python:3.5.1
+      - image: circleci/python:3.5.4
     steps:
       - checkout
       - run: pytest
