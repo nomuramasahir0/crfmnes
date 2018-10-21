@@ -2,6 +2,9 @@
 
 CR-FM-NES implementation
 
+[![CircleCI](https://circleci.com/gh/nmasahiro/crfmnes/tree/master.svg?style=svg)](https://circleci.com/gh/nmasahiro/crfmnes/tree/master)
+
+
 ## Getting Started
 
 
