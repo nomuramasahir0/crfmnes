@@ -20,7 +20,7 @@ def test_run_d40_ellipsoid():
     allowable_evals = (8.8 + 0.5*3) * 1e3 # 2 sigma
     iteration_number = int(allowable_evals / lamb) + 1
 
-    cr = CRFMNES(dim, ellipsoid, mean, sigma, lamb, use_constraint_violation=False)
+    cr = CRFMNES(dim, ellipsoid, mean, sigma, lamb)
     x_best, f_best = cr.optimize(iteration_number)
     print("f_best:{}".format(f_best))
     assert f_best < 1e-12
@@ -35,7 +35,7 @@ def test_run_d80_ellipsoid():
     allowable_evals = (17.5 + 0.6*3) * 1e3 # 2 sigma
     iteration_number = int(allowable_evals / lamb) + 1
 
-    cr = CRFMNES(dim, ellipsoid, mean, sigma, lamb, use_constraint_violation=False)
+    cr = CRFMNES(dim, ellipsoid, mean, sigma, lamb)
     x_best, f_best = cr.optimize(iteration_number)
     print("f_best:{}".format(f_best))
     assert f_best < 1e-12

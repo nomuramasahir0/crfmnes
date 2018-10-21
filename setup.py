@@ -15,7 +15,7 @@ with open("README.md", "r") as fh:
 
 setup(name="crfmnes",
       long_description=long_description,
-      version="0.0.3",
+      version="0.0.4",
       description="CR-FM-NES " +
                   "for numerical optimization in Python",
       author="Masahiro Nomura",
