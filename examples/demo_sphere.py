@@ -6,15 +6,16 @@ from crfmnes import CRFMNES
 
 
 def sphere(x):
+    x = x.reshape(-1)
     return np.sum(x**2)
 
 
 def main():
-    dim = 3
+    dim = 40
     mean = np.ones([dim, 1]) * 2
     sigma = 0.5
-    lamb = 6 # note that lamb (sample size) should be even number
-    iteration_number = 100
+    lamb = 16 # note that lamb (sample size) should be even number
+    iteration_number = 500
 
     cr = CRFMNES(dim, sphere, mean, sigma, lamb)
     x_best, f_best = cr.optimize(iteration_number)

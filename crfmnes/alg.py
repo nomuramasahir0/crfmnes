@@ -32,14 +32,6 @@ def sort_indices_by(evals, z):
     return sorted_indices
 
 
-def calc_constraint_violation(x, lamb):
-    constraint_violation = np.zeros(lamb)
-    for i in range(lamb):
-        for j in range(x[:, i].size):
-            constraint_violation[i] += (-min(0.0, x[:, i][j]) + max(0.0, x[:, i][j] - 1.0)) * 1e5
-    return constraint_violation
-
-
 class CRFMNES:
     def __init__(self, dim, f, m, sigma, lamb, **kwargs):
 
@@ -55,7 +47,7 @@ class CRFMNES:
         self.D = np.ones([dim, 1])
         self.constraint = kwargs.get('constraint', [[- np.inf, np.inf] for _ in range(dim)])
         self.penalty_coef = kwargs.get('penalty_coef', 1e5)
-        self.use_constraint_violation = True
+        self.use_constraint_violation = kwargs.get('use_constraint_violation', True)
 
         self.w_rank_hat = (np.log(self.lamb / 2 + 1) - np.log(np.arange(1, self.lamb + 1))).reshape(self.lamb, 1)
         self.w_rank_hat[np.where(self.w_rank_hat < 0)] = 0
@@ -95,12 +87,12 @@ class CRFMNES:
         violations = np.zeros(self.lamb)
         for i in range(self.lamb):
             for j in range(self.dim):
-                violations[i] += (- min(0, x[j][i] - self.constraint[j][0]) + max(0, x[j][i] - self.constraint[j][
-                    1])) * self.penalty_coef
+                violations[i] += (- min(0, x[j][i] - self.constraint[j][0]) + max(0, x[j][i] - self.constraint[j][1])) * self.penalty_coef
         return violations
 
     def optimize(self, iterations):
         for _ in range(iterations):
+            # print("f_best:{}".format(self.f_best))
             _ = self.one_iteration()
         return self.x_best, self.f_best
 
@@ -120,7 +112,7 @@ class CRFMNES:
 
         violations = np.zeros(lamb)
         if self.use_constraint_violation:
-            violations = calc_constraint_violation(x, self.lamb)
+            violations = self.calc_violations(x)
             sorted_indices = sort_indices_by(evals_no_sort + violations, self.z)
         else:
             sorted_indices = sort_indices_by(evals_no_sort, self.z)
@@ -172,7 +164,7 @@ class CRFMNES:
         b = -(1 - alphavd ** 2) * normv4 / gammav + 2 * alphavd ** 2
         H = np.ones([self.dim, 1]) * 2 - (b + 2 * alphavd ** 2) * vbarbar  # dim x 1
         invH = H ** (-1)
-        s_step1 = yy - normv2 / gammav * (yvbar * ip_yvbar) + np.ones([self.dim, self.lamb + 1])  # dim x lamb+1
+        s_step1 = yy - normv2 / gammav * (yvbar * ip_yvbar) - np.ones([self.dim, self.lamb + 1])  # dim x lamb+1
         ip_vbart = vbar.T @ t  # 1 x lamb+1
         s_step2 = s_step1 - alphavd / gammav * ((2 + normv2) * (t * vbar) - normv2 * vbarbar @ ip_vbart)  # dim x lamb+1
         invHvbarbar = invH * vbarbar
@@ -194,7 +186,7 @@ class CRFMNES:
         # update s, D
         G_s = np.sum((self.z * self.z - np.ones([self.dim, self.lamb])) @ weights) / self.dim
         l_s = 1.0 if ps_norm >= self.chiN and G_s < 0 else 0.0
-        self.sigma = self.sigma * np.exp((1 - l_s) * eta_sigma / 2 * G_s) * nthrootdetAold
+        self.sigma = self.sigma * np.exp((1 - l_s) * eta_sigma / 2 * G_s) * nthrootdetA / nthrootdetAold
         self.D = self.D / nthrootdetA
 
         return xs_no_sort, evals_no_sort, violations
