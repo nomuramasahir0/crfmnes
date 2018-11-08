@@ -48,4 +48,4 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/nmasahiro/crfmnes/blob/master/LISENCE) file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/nmasahiro/crfmnes/blob/master/LICENSE) file for details
