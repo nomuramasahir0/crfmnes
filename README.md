@@ -1,8 +1,18 @@
-# crfmnes
+# CR-FM-NES
 
-CR-FM-NES implementation
+CR-FM-NES [1] implementation.
+This is an extension of FM-NES (Fast Moving Natural Evolution Strategy) [2] to be
+applicable in high-dimensional problems.
 
-[![CircleCI](https://circleci.com/gh/nmasahiro/crfmnes/tree/master.svg?style=shield)](https://circleci.com/gh/nmasahiro/crfmnes/tree/master)
+If you find this code useful in your research then please cite:
+```bibtex
+@article{nomura2022fast,
+  title={Fast Moving Natural Evolution Strategy for High-Dimensional Problems},
+  author={Nomura, Masahiro and Ono, Isao},
+  journal={arXiv preprint arXiv:2201.11422},
+  year={2022}
+}
+```
 
 
 ## Getting Started
@@ -41,11 +51,11 @@ print("x_best:{}, f_best:{}".format(x_best, f_best))
 ```
 
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/nmasahiro/crfmnes/tags). 
-
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/nmasahiro/crfmnes/blob/master/LICENSE) file for details
+
+
+## References
+* [1] [M. Nomura, I. Ono, Fast Moving Natural Evolution Strategy for High-Dimensional Problems, IEEE CEC 2022.](https://arxiv.org/abs/2201.11422)
+* [2] [M. Nomura, I. Ono, Natural Evolution Strategy for Unconstrained and Implicitly Constrained Problems with Ridge Structure, IEEE SSCI, 2021.](https://arxiv.org/abs/2108.09455)
