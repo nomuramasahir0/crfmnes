@@ -57,5 +57,5 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 
 ## References
-* [1] [M. Nomura, I. Ono, Fast Moving Natural Evolution Strategy for High-Dimensional Problems, IEEE CEC 2022.](https://arxiv.org/abs/2201.11422)
+* [1] [M. Nomura, I. Ono, Fast Moving Natural Evolution Strategy for High-Dimensional Problems, IEEE CEC, 2022.](https://arxiv.org/abs/2201.11422)
 * [2] [M. Nomura, I. Ono, Natural Evolution Strategy for Unconstrained and Implicitly Constrained Problems with Ridge Structure, IEEE SSCI, 2021.](https://arxiv.org/abs/2108.09455)
