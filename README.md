@@ -1,7 +1,7 @@
 # CR-FM-NES
 
-CR-FM-NES [1] implementation.
-This is an extension of FM-NES (Fast Moving Natural Evolution Strategy) [2] to be
+[CR-FM-NES](https://arxiv.org/abs/2201.11422) [1] implementation.
+This is an extension of [FM-NES (Fast Moving Natural Evolution Strategy)](https://arxiv.org/abs/2108.09455) [2] to be
 applicable in high-dimensional problems.
 
 If you find this code useful in your research then please cite:
