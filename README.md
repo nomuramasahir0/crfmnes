@@ -2,7 +2,7 @@
 
 [CR-FM-NES](https://arxiv.org/abs/2201.11422) [1] implementation.
 This is an extension of [FM-NES (Fast Moving Natural Evolution Strategy)](https://arxiv.org/abs/2108.09455) [2] to be
-applicable in high-dimensional problems.
+applicable in high-dimensional problems. Please e-mail at masahironomura5325@gmail.com if you have any issue.
 
 If you find this code useful in your research then please cite:
 ```bibtex
