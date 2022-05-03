@@ -58,9 +58,9 @@ Please set the objective function value of the infeasible solution to `np.inf`.
 CR-FM-NES reflects the information and performs an efficient search. 
 Please refer to [3] for the details of the constraint handling methods implemented in this repository.
 
-## Other Language Implementations
+## Other Versions of CR-FM-NES
 
-I really appreciate that CR-FM-NES is implemented in other languages.
+I really appreciate that CR-FM-NES is implemented in other settings.
 
 * C# Implementation: https://github.com/bakanaouji/CRFMNES_CS
 
