@@ -144,7 +144,6 @@ class CRFMNES:
         weights = weights_dist if ps_norm >= self.chiN else self.w_rank
         eta_sigma = self.eta_move_sigma if ps_norm >= self.chiN else self.eta_stag_sigma(
             lambF) if ps_norm >= 0.1 * self.chiN else self.eta_conv_sigma(lambF)
-        l_c = 1.0 if ps_norm >= self.chiN else 0.0
         # update pc, m
         wxm = (x - self.m) @ weights
         self.pc = (1. - self.cc) * self.pc + np.sqrt(self.cc * (2. - self.cc) * self.mueff) * wxm / self.sigma
@@ -174,19 +173,15 @@ class CRFMNES:
         ip_svbarbar = vbarbar.T @ s  # 1 x lamb+1
         t = t - alphavd * ((2 + normv2) * (s * vbar) - vbar @ ip_svbarbar)  # dim x lamb+1
         # update v, D
-        exw = np.append(self.eta_B(lambF) * weights, np.array([l_c * self.c1(lambF)]).reshape(1, 1),
+        exw = np.append(self.eta_B(lambF) * weights, np.array([self.c1(lambF)]).reshape(1, 1),
                         axis=0)  # lamb+1 x 1
-        oldv = copy.deepcopy(self.v)
         self.v = self.v + (t @ exw) / normv
-        oldD = copy.deepcopy(self.D)
         self.D = self.D + (s @ exw) * self.D
-        # calculate detAold, detA
-        nthrootdetAold = np.exp(np.sum(np.log(oldD)) / self.dim + np.log(1 + oldv.T @ oldv) / (2 * self.dim))[0][0]
+        # calculate detA
         nthrootdetA = np.exp(np.sum(np.log(self.D)) / self.dim + np.log(1 + self.v.T @ self.v) / (2 * self.dim))[0][0]
-        # update s, D
-        G_s = np.sum((self.z * self.z - np.ones([self.dim, self.lamb])) @ weights) / self.dim
-        l_s = 1.0 if ps_norm >= self.chiN and G_s < 0 else 0.0
-        self.sigma = self.sigma * np.exp((1 - l_s) * eta_sigma / 2 * G_s) * nthrootdetA / nthrootdetAold
         self.D = self.D / nthrootdetA
+        # update sigma
+        G_s = np.sum((self.z * self.z - np.ones([self.dim, self.lamb])) @ weights) / self.dim
+        self.sigma = self.sigma * np.exp(eta_sigma / 2 * G_s)
 
         return xs_no_sort, evals_no_sort, violations

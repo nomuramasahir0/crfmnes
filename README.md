@@ -33,6 +33,7 @@ $ pip install crfmnes
 ## Example
 
 This is a simple example that objective function is sphere function.
+Note that the optimization problem is formulated as **minimization** problem.
 
 ```python
 import numpy as np
@@ -50,6 +51,12 @@ print("x_best:{}, f_best:{}".format(x_best, f_best))
 # x_best:[1.64023896e-05 2.41682149e-05 3.40657594e-05], f_best:2.0136169613476005e-09
 ```
 
+## For Implicitly Constrained Problems
+
+CR-FM-NES can be applied to (implicitly) constrained black-box optimization problems.
+Please set the objective function value of the infeasible solution to `np.inf`.
+CR-FM-NES reflects the information and performs an efficient search. 
+Please refer to [3] for the details of the constraint handling methods implemented in this repository.
 
 ## License
 
@@ -59,3 +66,4 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 ## References
 * [1] [M. Nomura, I. Ono, Fast Moving Natural Evolution Strategy for High-Dimensional Problems, IEEE CEC, 2022.](https://arxiv.org/abs/2201.11422)
 * [2] [M. Nomura, I. Ono, Natural Evolution Strategy for Unconstrained and Implicitly Constrained Problems with Ridge Structure, IEEE SSCI, 2021.](https://arxiv.org/abs/2108.09455)
+* [3] [M. Nomura, N. Sakai, N. Fukushima, and I. Ono, “Distance-weighted Exponential Natural Evolution Strategy for Implicitly Constrained Black-Box Function Optimization, IEEE CEC, 2021.](https://ieeexplore.ieee.org/document/9504865)
