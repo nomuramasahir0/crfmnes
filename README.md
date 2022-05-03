@@ -58,12 +58,14 @@ Please set the objective function value of the infeasible solution to `np.inf`.
 CR-FM-NES reflects the information and performs an efficient search. 
 Please refer to [3] for the details of the constraint handling methods implemented in this repository.
 
-## License
+## Other Language Implementations
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/nmasahiro/crfmnes/blob/master/LICENSE) file for details
+I really appreciate that CR-FM-NES is implemented in other languages.
+
+* C# Implementation: https://github.com/bakanaouji/CRFMNES_CS
 
 
 ## References
 * [1] [M. Nomura, I. Ono, Fast Moving Natural Evolution Strategy for High-Dimensional Problems, IEEE CEC, 2022.](https://arxiv.org/abs/2201.11422)
 * [2] [M. Nomura, I. Ono, Natural Evolution Strategy for Unconstrained and Implicitly Constrained Problems with Ridge Structure, IEEE SSCI, 2021.](https://arxiv.org/abs/2108.09455)
-* [3] [M. Nomura, N. Sakai, N. Fukushima, and I. Ono, “Distance-weighted Exponential Natural Evolution Strategy for Implicitly Constrained Black-Box Function Optimization, IEEE CEC, 2021.](https://ieeexplore.ieee.org/document/9504865)
+* [3] [M. Nomura, N. Sakai, N. Fukushima, and I. Ono, Distance-weighted Exponential Natural Evolution Strategy for Implicitly Constrained Black-Box Function Optimization, IEEE CEC, 2021.](https://ieeexplore.ieee.org/document/9504865)
