@@ -42,6 +42,7 @@ class CRFMNES:
         self.m = m
         self.sigma = sigma
         self.lamb = lamb
+        assert (lamb > 0 and lamb % 2 == 0), f"The value of 'lamb' must be an even, positive integer greater than 0"
 
         self.v = kwargs.get('v', np.random.randn(dim, 1) / np.sqrt(dim))
         self.D = np.ones([dim, 1])
