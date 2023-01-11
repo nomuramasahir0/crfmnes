@@ -12,9 +12,13 @@ INFEASIBLE = np.inf
 def get_h_inv(dim):
     f = lambda a, b: ((1. + a * a) * math.exp(a * a / 2.) / 0.24) - 10. - dim
     f_prime = lambda a: (1. / 0.24) * a * math.exp(a * a / 2.) * (3. + a * a)
-    h_inv = 1.0
+    h_inv = 6.0
     while abs(f(h_inv, dim)) > 1e-10:
+        last = h_inv
         h_inv = h_inv - 0.5 * (f(h_inv, dim) / f_prime(h_inv))
+        if abs(h_inv - last) < 1e-16:
+            # Exit early since no further improvements are happening
+            break
     return h_inv
 
 
