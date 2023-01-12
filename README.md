@@ -74,8 +74,9 @@ Please refer to [3] for the details of the constraint handling methods implement
 
 I really appreciate that CR-FM-NES is implemented in other settings.
 
-* C# Implementation: https://github.com/bakanaouji/CRFMNES_CS
-* C++ Implementation: https://github.com/dietmarwo/fast-cma-es/blob/master/_fcmaescpp/crfmnes.cpp
+* C# Implementation: [bakanaouji/CRFMNES_CS](https://github.com/bakanaouji/CRFMNES_CS)
+* C++ Implementation: [dietmarwo/fast-cma-es](https://github.com/dietmarwo/fast-cma-es/blob/master/_fcmaescpp/crfmnes.cpp)
+* Jax(Python) Implementation: [RobertTLange/evosax](https://github.com/RobertTLange/evosax/blob/main/evosax/strategies/cr_fm_nes.py)
 
 
 ## References
