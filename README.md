@@ -8,15 +8,23 @@ This is an extension of [FM-NES (Fast Moving Natural Evolution Strategy)](https:
 applicable in high-dimensional problems.
 Please e-mail at masahironomura5325@gmail.com if you have any issue.
 
+<img width="1215" alt="188303830-aa7b11d0-c6ff-4d1a-9bd8-2ccbf4d7e2dd" src="https://user-images.githubusercontent.com/10880858/211967554-65d632bd-3e77-4725-998c-20f69bb8f5ce.png">
+
 If you find this code useful in your research then please cite:
 ```bibtex
-@article{nomura2022fast,
+@INPROCEEDINGS{nomura2022fast,
   title={Fast Moving Natural Evolution Strategy for High-Dimensional Problems},
   author={Nomura, Masahiro and Ono, Isao},
-  journal={arXiv preprint arXiv:2201.11422},
+  booktitle={2022 IEEE Congress on Evolutionary Computation (CEC)}, 
+  pages={1-8},
+  doi={10.1109/CEC55065.2022.9870206}}
   year={2022}
 }
 ```
+
+## News
+* **(2022/07)** The paper [Fast Moving Natural Evolution Strategy for High-Dimensional Problems](https://arxiv.org/abs/2201.11422) has been accepted at IEEE CEC'22.
+* **(2022/12)** CR-FM-NES has been integrated into [evosax](https://github.com/RobertTLange/evosax), which provides JAX-based evolution strategies implementation. Thanks [@RobertTLange](https://github.com/RobertTLange) and [@Obliman](https://github.com/Obliman)!
 
 
 ## Getting Started
