@@ -22,8 +22,9 @@ If you find this code useful in your research then please cite:
 ```
 
 ## News
-* **(2022/07)** The paper [Fast Moving Natural Evolution Strategy for High-Dimensional Problems](https://arxiv.org/abs/2201.11422) has been accepted at IEEE CEC'22.
+* **(2023/01)** We released the first major version of `crfmnes` in January 2023. You can install it via `pip install crfmnes`.
 * **(2022/12)** CR-FM-NES has been integrated into [evosax](https://github.com/RobertTLange/evosax), which provides JAX-based evolution strategies implementation. Thanks [@RobertTLange](https://github.com/RobertTLange) and [@Obliman](https://github.com/Obliman)!
+* **(2022/07)** The paper [Fast Moving Natural Evolution Strategy for High-Dimensional Problems](https://arxiv.org/abs/2201.11422) has been accepted at IEEE CEC'22.
 
 
 ## Getting Started
