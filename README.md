@@ -18,7 +18,7 @@ If you find this code useful in your research then please cite:
   booktitle={2022 IEEE Congress on Evolutionary Computation (CEC)}, 
   pages={1-8},
   doi={10.1109/CEC55065.2022.9870206}},
-  year={2022}
+  year={2022},
 }
 ```
 
