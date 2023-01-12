@@ -1,11 +1,10 @@
 # CR-FM-NES [[slide]](slide_cec2022.pdf)
 
-[CR-FM-NES](https://arxiv.org/abs/2201.11422) [1] implementation.
-The main feature of CR-FM-NES is that both time and space complexity are linear, with partially considering variable dependencies.
+[CR-FM-NES](https://arxiv.org/abs/2201.11422) [1] is an efficient black-box optimization method for high-dimensional problems.
+In CR-FM-NES, both time and space complexity are linear, with partially considering variable dependencies.
 Therefore, it is especially suitable for high-dimensional problems (about hundreds to thousands of dimensions).
 On the other hand, it often achieves high performance even on low-dimensional problems.
-This is an extension of [FM-NES (Fast Moving Natural Evolution Strategy)](https://arxiv.org/abs/2108.09455) [2] to be
-applicable in high-dimensional problems.
+This is an extension of [FM-NES (Fast Moving Natural Evolution Strategy)](https://arxiv.org/abs/2108.09455) [2] to be applicable in high-dimensional problems.
 Please e-mail at masahironomura5325@gmail.com if you have any issue.
 
 <img width="1215" alt="188303830-aa7b11d0-c6ff-4d1a-9bd8-2ccbf4d7e2dd" src="https://user-images.githubusercontent.com/10880858/211967554-65d632bd-3e77-4725-998c-20f69bb8f5ce.png">
