@@ -21,7 +21,7 @@ def test_run_d40_const_sphere():
     allowable_evals = (19.4 + 1.1*3) * 1e3 # 2 sigma
     iteration_number = int(allowable_evals / lamb) + 1
 
-    cr = CRFMNES(dim, const_sphere, mean, sigma, lamb)
+    cr = CRFMNES(dim, const_sphere, mean, sigma, lamb, dtype=np.float128)
     x_best, f_best = cr.optimize(iteration_number)
     print("f_best:{}".format(f_best))
     assert f_best < 1e-12
@@ -36,7 +36,7 @@ def test_run_d80_const_sphere():
     allowable_evals = (48.8 + 1.4*3) * 1e3 # 2 sigma
     iteration_number = int(allowable_evals / lamb) + 1
 
-    cr = CRFMNES(dim, const_sphere, mean, sigma, lamb)
+    cr = CRFMNES(dim, const_sphere, mean, sigma, lamb, dtype=np.float128)
     x_best, f_best = cr.optimize(iteration_number)
     print("f_best:{}".format(f_best))
     assert f_best < 1e-12

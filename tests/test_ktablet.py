@@ -21,7 +21,7 @@ def test_run_d40_ktablet():
     allowable_evals = (9.1 + 0.6*3) * 1e3 # 2 sigma
     iteration_number = int(allowable_evals / lamb) + 1
 
-    cr = CRFMNES(dim, ktablet, mean, sigma, lamb)
+    cr = CRFMNES(dim, ktablet, mean, sigma, lamb, dtype=np.float128)
     x_best, f_best = cr.optimize(iteration_number)
     print("f_best:{}".format(f_best))
     assert f_best < 1e-12
@@ -36,7 +36,7 @@ def test_run_d80_ktablet():
     allowable_evals = (18.6 + 0.8*3) * 1e3 # 2 sigma
     iteration_number = int(allowable_evals / lamb) + 1
 
-    cr = CRFMNES(dim, ktablet, mean, sigma, lamb)
+    cr = CRFMNES(dim, ktablet, mean, sigma, lamb, dtype=np.float128)
     x_best, f_best = cr.optimize(iteration_number)
     print("f_best:{}".format(f_best))
     assert f_best < 1e-12
