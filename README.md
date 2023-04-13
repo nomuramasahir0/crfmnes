@@ -78,6 +78,7 @@ I really appreciate that CR-FM-NES is implemented in other settings.
 * C# Implementation: [bakanaouji/CRFMNES_CS](https://github.com/bakanaouji/CRFMNES_CS)
 * C++ Implementation: [dietmarwo/fast-cma-es](https://github.com/dietmarwo/fast-cma-es/blob/master/_fcmaescpp/crfmnes.cpp)
 * Jax(Python) Implementation: [RobertTLange/evosax](https://github.com/RobertTLange/evosax/blob/main/evosax/strategies/cr_fm_nes.py)
+* Jax(Python) Implementation: [google/evojax](https://github.com/google/evojax/tree/main/evojax/algo)
 
 
 ## References
